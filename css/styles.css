@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   color: var(--text-color);
 }
+
 :root {
   --text-font-family: "Roboto", sans-serif;
   --heading-footer-font-family: "Raleway", sans-serif;
@@ -12,11 +13,67 @@ body {
   --text-color: #212121;
   --paragraph-color: #757575;
 }
-.global-header {
-  background-color: #ececec;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+a,
+b,
+button,
+br,
+img,
+span {
+  margin-left: 0;
+  margin-right: 0;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.section {
+  padding-left: 215px;
+  padding-right: 215px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+.header-list {
+  display: flex;
+  align-items: center;
+  margin-left: 43px;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.navigation .logo {
+  align-items: center;
+}
+.header-contacts {
+  display: flex;
+  align-items: center;
 }
 
+.header-contacts .link {
+  padding-right: 40px;
+}
+
+.global-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ececec;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .global-header .logo {
+  padding-right: 50px;
   text-decoration: none;
   font-family: "Raleway";
   font-style: normal;
@@ -32,22 +89,42 @@ body {
 ul {
   list-style-type: none;
 }
+
+.global-header .navigation ul > li + li {
+  display: flex;
+  margin-left: 50px;
+}
 .global-header .link {
   font-weight: 500;
   text-decoration: none;
   color: var(--text-color);
 }
-
 .global-header .link:hover,
 .global-header .link:focus {
   color: var(--link-button-color);
 }
-.contacts .link {
+
+.header-contacts .link {
   color: var(--paragraph-color);
 }
 .hero-heading {
   background-color: #2f303a;
 }
+
+.hero-heading .button {
+  margin: 20px;
+}
+.hero-heading .container {
+  text-align: center;
+}
+.hero-container {
+  text-align: center;
+}
+
+.container.hero-container {
+  padding: 200px;
+}
+
 .hero-heading .title {
   font-weight: 900;
   font-size: 44px;
@@ -58,6 +135,7 @@ ul {
   color: #ffffff;
 }
 .hero-heading .button {
+  padding: 10px 10px;
   cursor: pointer;
   font-family: "Roboto";
   background-color: var(--link-button-color);
@@ -69,40 +147,109 @@ ul {
   border: 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  left: 700px;
-  top: 430px;
+}
+.section-attributes-list {
+  display: flex;
+  max-width: 1170px;
+}
+.section-attributes-item {
+  margin-right: 30px;
+  flex-basis: calc((100% - 75px) / 4);
+}
+.section-attributes-item:last-child {
+  margin-right: 0px;
+}
+.name {
+  margin-bottom: 10px;
+}
+.section-attributes,
+.section-work,
+.section-team {
+  padding-top: 94px;
 }
 .section-attributes .name {
   font-weight: 700;
-  line-height: 16px;
   letter-spacing: 0.03em;
+  line-height: 1.71;
 }
 .section-attributes .description {
   line-height: 24px;
   letter-spacing: 0.03em;
   color: var(--paragraph-color);
 }
-.section-work,
-.section-team h2 {
+.section-work-title,
+.section-team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.03em;
+}
+.container-work {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.section-work-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.section-work-list {
+  display: flex;
+}
+.section-work-item {
+  margin-right: 30px;
+}
+.services-list-item:last-child {
+  margin-right: 0px;
+}
+.section-team {
+  background: #f5f4fa;
+  padding-bottom: 94px;
+}
+.section-team-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.section-team-list {
+  display: flex;
+}
+.section-team-item {
+  margin-right: 30px;
+  flex-basis: calc((100% - 72px) / 4);
+  text-align: center;
+  background: #ffffff;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
 }
 .section-team .name {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.03em;
+  padding-top: 30px;
 }
 .section-team .description {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.03em;
   color: var(--paragraph-color);
+}
+.portfolio-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.buttons-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.buttons-list-item {
+  margin-right: 8px;
+  color: #f5f4fa;
+}
+.buttons-list-item:last-child {
+  margin-right: 0;
 }
 .buttons-list .button {
   font-weight: 500;
@@ -112,6 +259,7 @@ ul {
   letter-spacing: 0.03em;
   cursor: pointer;
   border: 0;
+  padding: 6px 22px;
 }
 .buttons-list .button:hover,
 .buttons-list .button:focus {
@@ -122,18 +270,29 @@ ul {
   background-color: #2196f3;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.section .container {
-  width: 480px;
-  margin: 0 auto;
-  padding: 0 15px;
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-bottom: -20px;
+}
+.cards-item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.cards-item {
+  border: 1px solid #eeeeee;
 }
 .portfolio .article-name {
+  margin-top: 20px;
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 36px;
   letter-spacing: 0.06em;
 }
 .portfolio .article-type {
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.03em;
@@ -141,6 +300,8 @@ ul {
 }
 .global-footer {
   background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .global-footer .logo {
   font-family: var(--heading-footer-font-family);
@@ -154,7 +315,13 @@ ul {
 .global-footer .logo .web {
   color: var(--link-button-color);
 }
-
+.global-footer-item-1 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+.global-footer-item-2 {
+  margin-top: 12px;
+}
 .global-footer .location {
   font-family: var(--text-font-family);
   font-style: normal;
